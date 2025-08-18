@@ -13,10 +13,10 @@ export default function Layout({
     <body>
       <Navigation />
       <Box sx={{
-        marginTop: {
-          xs: "130px",
-          sm: "86px",
-        }
+        // marginTop: {
+        //   xs: "130px",
+        //   sm: "86px",
+        // }
       }}>
         {children}
       </Box>
