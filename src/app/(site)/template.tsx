@@ -14,12 +14,14 @@ export default function Template({ children }: TemplateProps) {
     <body>
       {/* <Navigation /> */}
       <Box
-      // sx={{
-      //   marginTop: {
-      //     xs: "130px",
-      //     sm: "86px",
-      //   },
-      // }}
+        sx={{
+          // marginTop: {
+          //   xs: "130px",
+          //   sm: "86px",
+          // },
+
+          background: "#000319",
+        }}
       >
         {children}
       </Box>

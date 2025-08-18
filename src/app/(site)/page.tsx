@@ -1,6 +1,8 @@
 "use client";
 
+import Hero from "@/components/pages/home/hero";
 import { useBreakpoint } from "@/hooks/useBreakpoints";
+import { Stack } from "@mui/material";
 import { sendGTMEvent } from "@next/third-parties/google";
 import { useEffect } from "react";
 
@@ -17,6 +19,8 @@ export default function Home() {
   }, []);
 
   return (
-    <p>Um Site de Thomas Sampaio</p>
+    <Stack>
+      <Hero />
+    </Stack>
   );
 }
