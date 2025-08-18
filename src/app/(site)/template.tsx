@@ -12,7 +12,7 @@ interface TemplateProps {
 export default function Template({ children }: TemplateProps) {
   return (
     <body>
-      {/* <Navigation /> */}
+      <Navigation />
       <Box
         sx={{
           // marginTop: {
@@ -25,7 +25,7 @@ export default function Template({ children }: TemplateProps) {
       >
         {children}
       </Box>
-      {/* <Footer /> */}
+      <Footer />
     </body>
   );
 }

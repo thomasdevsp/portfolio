@@ -1,215 +1,146 @@
 "use client";
 
 import React from "react";
-import { ContainerFooter, ContentFooter, ButtonLink } from "./styles";
-import { Container, Divider, Link, Stack, Typography } from "@mui/material";
+import { ContainerFooter } from "./styles";
+import { Box, Button, Container, Divider, Link, Stack, Typography } from "@mui/material";
 import { useBreakpoint } from "@/hooks/useBreakpoints";
-import Logo from "../logo";
-
-const sections = [
-  {
-    title: "Navegação",
-    links: [
-      { label: "Atrações", href: "/#" },
-      { label: "Sua Festa", href: "/#" },
-      { label: "Informações", href: "/#" },
-      { label: "Preços e Promoções", href: "/#" },
-    ],
-  },
-];
-
-const contactInfo = [
-  {
-    icon: <img src="/assets/img/footer/icons/location.svg" />,
-    text: "Av. Presidente Kennedy, 1500 – Ribeirânia",
-  },
-  {
-    icon: <img src="/assets/img/footer/icons/tell.svg" />,
-    text: (
-      <>
-        (16) 3013-0022 / 3013-7722
-      </>
-    ),
-  },
-  {
-    icon: <img src="/assets/img/footer/icons/mail.svg" />,
-    text: (
-      <>
-        festa@gorilao.com.br
-      </>
-    ),
-  },
-  {
-    icon: <img src="/assets/img/footer/icons/time.svg" />,
-    text: (
-      <>
-        Segunda a Sábado das 15h às 22h, Domingo: 15h às 21h
-      </>
-    ),
-  },
-
-];
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
-  const year = new Date().getFullYear();
   const isMobile = useBreakpoint("md");
 
   return (
     <>
-      <ContainerFooter
+
+      <Stack
         sx={{
-          background: "#3CA956",
-          color: "#fff",
+          width: "100%",
+          padding: "1.25rem",
+
+          alignItems: "center",
+
+          background: "#000319",
         }}
       >
-        <img
-          src="/assets/img/footer/footer-top-left.svg"
-          alt=""
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-          }}
-        />
-
-        <img
-          src="/assets/img/footer/footer-top-right.svg"
-          alt=""
-          style={{
-            position: "absolute",
-            top: 0,
-            right: 0,
-          }}
-        />
-
-        <Container maxWidth="lg"
+        <Stack
           sx={{
-            padding: "1rem 1rem 0",
-          }}>
+            gap: "2rem",
+          }}
+        >
+          <Stack>
+            <Typography
+              sx={{
+                color: "#fff",
+                fontSize: isMobile ? "4.125rem" : "5.75rem",
+                fontWeight: "bold",
+                "span": {
+                  color: "#CBACF9",
+                }
+              }}
+            >
+              Posso <span>ajudar?</span>
+            </Typography>
+
+            <Typography
+              sx={{
+                color: "#fff",
+                "span": {
+                  color: "#CBACF9",
+                }
+              }}
+            >
+              Vamos conversar e <br />
+              desenvolver sua <span>ideia</span>
+            </Typography>
+          </Stack>
+
           <Stack
-            direction={{ xs: "column", md: "row" }}
-            gap={isMobile ? 4 : 1}
-            justifyContent="space-between"
-            alignItems={{ xs: "center", md: "flex-start" }}
+            sx={{
+              maxWidth: isMobile ? "270px" : "330px",
+            }}
           >
-            {/* Logo */}
-            <Stack
+            <Typography
+              sx={{
+                color: "#fff",
+                fontSize: isMobile ? "1.375rem" : "1.75rem",
+              }}
+            >
+              thomasdevsp@gmail.com
+            </Typography>
+            <Divider
               sx={{
                 width: "100%",
-                margin: "auto 0",
+                height: "3px",
 
-                alignItems: isMobile ? "center" : "flex-start",
-                justifyContent: "center",
+                background: "#fff",
+                borderRadius: "6px",
               }}
+            />
+          </Stack>
 
+          <Stack
+            sx={{
+              flexDirection: "row",
+              gap: "1rem",
+            }}
+          >
+            <Stack
+              component={"a"}
+              sx={{
+                padding: "0.625rem",
+
+                background: "#A265FB",
+                borderRadius: "0.5rem",
+                color: "#fff",
+                ":hover": {
+                  transition: "all 0.2s ease",
+                  background: "#8034F2",
+                }
+              }}
             >
-              <Logo
-                height={80}
+              <FaGithub
+                size={24}
               />
             </Stack>
 
-
-            {/* Seções de Links */}
-            {sections.map((section, index) => (
-              <Stack
-                key={index}
-                sx={{
-                  width: "100%",
-                  gap: "0.5rem",
-
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#fff",
-                    fontWeight: "bold"
-                  }}
-                >
-                  {section.title}
-                </Typography>
-
-                {
-                  section.links.map((link, i) => (
-                    <Link
-                      key={i}
-                      href={link.href}
-                      underline="none"
-                      target={undefined}
-                      sx={{
-                        maxWidth: "180px",
-
-                        color: "#fff",
-                        cursor: "pointer",
-                        fontSize: "0.875rem",
-                      }}
-                    >
-                      {link.label}
-                    </Link>
-                  ))
-                }
-              </Stack>
-            ))}
-
-            {/* Contato */}
             <Stack
+              component={"a"}
               sx={{
-                width: "100%",
-                gap: "1rem",
+                padding: "0.625rem",
+
+                background: "#A265FB",
+                borderRadius: "0.5rem",
+                color: "#fff",
+                ":hover": {
+                  transition: "all 0.2s ease",
+                  background: "#8034F2",
+                }
               }}
             >
-              <Typography
-                sx={{
-                  color: "#fff",
-                  fontWeight: "bold"
-                }}
-              >
-                CONTATO
-              </Typography>
-              {contactInfo.map((item, index) => (
-                <Stack
-                  key={index}
-                  direction="row"
-                  gap={1}
-                  alignItems="flex-start"
-                  color="primary.dark"
-                  fontSize="0.875rem"
-                >
-                  {item.icon}
-                  <Typography
-                    variant="body2"
-                    sx={{
-                      color: "#fff",
-                    }}
-                  >
-                    {item.text}
-                  </Typography>
-                </Stack>
-              ))}
+              <FaLinkedin
+                size={24}
+              />
             </Stack>
+
           </Stack>
-
-        </Container>
-
-      </ContainerFooter >
+        </Stack>
+      </Stack>
 
       {/* Desenvolvido por */}
       < Stack
         sx={{
-          background: "#3CA956",
-          padding: isMobile ? "1rem 1rem 6rem" : "1rem",
+          background: "#000319",
+          padding: isMobile ? "1rem 1rem " : "1rem",
           justifyContent: "center",
           alignItems: "center",
           color: "white",
         }
         }
       >
-        <Typography variant="body2">
-          Desenvolvido por <Link href="https://www.summusmarketing.com.br/" target="_blank"
-            sx={{
-              color: "white",
-              textDecoration: "underline",
-            }}
-          >Summus Marketing</Link>
+        <Typography
+          variant="body2"
+        >
+          Developed and Design by Thomas Sampaio
         </Typography>
       </Stack >
     </>

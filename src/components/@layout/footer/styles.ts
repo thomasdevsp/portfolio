@@ -11,8 +11,7 @@ export const ContainerFooter = styled('footer')(({ theme }) => ({
   flexDirection: 'column',
   alignItems: 'center',
 
-  backgroundColor: theme.palette.background.paper,
-  boxShadow: "-2px -2px 4px rgba(0, 0, 0, 0.25)",
+  backgroundColor: "#000319",
 
   [theme.breakpoints.down('sm')]: {
     padding: '2rem 0 1rem',

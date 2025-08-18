@@ -4,12 +4,12 @@ import Link from "next/link";
 export const ContainerHeader = styled("header")(({ theme }) => ({
   width: "100%",
   zIndex: 200,
-  background: theme.palette.background.paper,
+  background: "transparent",
   position: "fixed",
   top: 0,
 
   [theme.breakpoints.up("sm")]: {
-    background: "#7E1612",
+    background: "transparent",
     boxShadow: theme.shadows[5],
   },
 }));
