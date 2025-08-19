@@ -1,13 +1,23 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { ContainerFooter } from "./styles";
 import { Box, Button, Container, Divider, Link, Stack, Typography } from "@mui/material";
 import { useBreakpoint } from "@/hooks/useBreakpoints";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
+  const [copied, setCopied] = useState(false)
   const isMobile = useBreakpoint("md");
+
+  const handleCopyClick = () => {
+    navigator.clipboard.writeText("thomasdevsp@gmail.com")
+    setCopied(true)
+
+    setTimeout(() => {
+      setCopied(false)
+    }, 2000)
+  }
 
   return (
     <>
@@ -55,8 +65,13 @@ export default function Footer() {
           </Stack>
 
           <Stack
+            onClick={handleCopyClick}
             sx={{
               maxWidth: isMobile ? "270px" : "330px",
+              "&:hover .divider-hover": {
+                transition: "all 0.5s ease",
+                width: 0,
+              },
             }}
           >
             <Typography
@@ -65,15 +80,18 @@ export default function Footer() {
                 fontSize: isMobile ? "1.375rem" : "1.75rem",
               }}
             >
-              thomasdevsp@gmail.com
+              {copied ? "email copiado!" : "thomasdevsp@gmail.com"}
             </Typography>
             <Divider
+              className="divider-hover"
               sx={{
                 width: "100%",
                 height: "3px",
 
                 background: "#fff",
                 borderRadius: "6px",
+                transition: "all 0.6s ease",
+
               }}
             />
           </Stack>
@@ -86,15 +104,19 @@ export default function Footer() {
           >
             <Stack
               component={"a"}
+              href="https://github.com/thomasdevsp"
+              target="_blank"
               sx={{
                 padding: "0.625rem",
 
                 background: "#A265FB",
                 borderRadius: "0.5rem",
                 color: "#fff",
+                transition: "all 0.2s ease",
                 ":hover": {
                   transition: "all 0.2s ease",
                   background: "#8034F2",
+                  scale: 1.1,
                 }
               }}
             >
@@ -105,15 +127,19 @@ export default function Footer() {
 
             <Stack
               component={"a"}
+              href="https://www.linkedin.com/in/thomas-sampaio/"
+              target="_blank"
               sx={{
                 padding: "0.625rem",
 
                 background: "#A265FB",
                 borderRadius: "0.5rem",
                 color: "#fff",
+                transition: "all 0.2s ease",
                 ":hover": {
                   transition: "all 0.2s ease",
                   background: "#8034F2",
+                  scale: 1.1,
                 }
               }}
             >
