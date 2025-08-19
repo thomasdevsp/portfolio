@@ -15,11 +15,6 @@ export default function Template({ children }: TemplateProps) {
       <Navigation />
       <Box
         sx={{
-          // marginTop: {
-          //   xs: "130px",
-          //   sm: "86px",
-          // },
-
           background: "#000319",
         }}
       >

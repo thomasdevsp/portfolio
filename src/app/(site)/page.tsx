@@ -1,6 +1,8 @@
 "use client";
 
+import AboutMe from "@/components/pages/home/about-me";
 import Hero from "@/components/pages/home/hero";
+import Projects from "@/components/pages/home/projects";
 import { useBreakpoint } from "@/hooks/useBreakpoints";
 import { Stack } from "@mui/material";
 import { sendGTMEvent } from "@next/third-parties/google";
@@ -21,6 +23,8 @@ export default function Home() {
   return (
     <Stack>
       <Hero />
+      <Projects />
+      <AboutMe />
     </Stack>
   );
 }

@@ -15,7 +15,6 @@ export const ContainerHeader = styled("header")(({ theme }) => ({
 }));
 
 export const ContainerNavigation = styled(Container)(({ theme }) => ({
-  padding: theme.spacing(1.5, 3),
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
