@@ -67,7 +67,7 @@ export default function Footer() {
           <Stack
             onClick={handleCopyClick}
             sx={{
-              maxWidth: isMobile ? "270px" : "330px",
+              maxWidth: isMobile ? "270px" : copied ? "190px" : "330px",
               cursor: "pointer",
               "&:hover .divider-hover": {
                 transition: "all 0.5s ease",
