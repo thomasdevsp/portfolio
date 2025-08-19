@@ -2,7 +2,7 @@ import { useBreakpoint } from "@/hooks/useBreakpoints";
 import { Box, Stack, Tab, Tabs, Typography } from "@mui/material";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { GoHome } from "react-icons/go";
 import { FaBook } from "react-icons/fa";
 import { RxPerson } from "react-icons/rx";
@@ -35,10 +35,9 @@ const Navigation = () => {
     setTabIndex(newValue);
   };
 
-  console.log(pathname);
 
 
-  React.useEffect(() => {
+  useEffect(() => {
     const index = NAV_ITEMS.findIndex((item) => item.href === pathname);
     setTabIndex(index);
   }, [pathname]);
@@ -53,24 +52,27 @@ const Navigation = () => {
             onChange={handleChange}
             centered
             sx={{
-              background: "#000319",
-              gap: "2rem",
               minHeight: "5.5rem", // Redução da altura das abas
+              gap: "2rem",
+              background: "#000319",
+
               "& .MuiTabs-indicator": {
                 backgroundColor: "unset",
               },
               "& .MuiTab-root": {
-                textTransform: "none",
-                fontWeight: "normal",
-                color: "white",
+                padding: "0.2rem 1rem",
+                minHeight: "5.5rem", // Garantindo que as abas não fiquem muito altas
+
                 display: "flex",
                 flexDirection: "row",
                 alignItems: "center",
                 justifyContent: "center",
                 gap: "0.5rem",
-                padding: "0.2rem 1rem",
+
+                color: "white",
                 fontSize: "0.9rem",
-                minHeight: "5.5rem", // Garantindo que as abas não fiquem muito altas
+                fontWeight: "normal",
+                textTransform: "none",
               },
               width: "100%",
               "& .MuiTab-root.Mui-selected": {
@@ -87,7 +89,6 @@ const Navigation = () => {
                 component={Link}
                 href={item.href}
                 icon={pathname === item.href && <item.icon color="currentColor" />}
-                iconPosition="start"
               />
             ))}
           </Tabs>
