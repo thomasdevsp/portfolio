@@ -68,6 +68,7 @@ export default function Footer() {
             onClick={handleCopyClick}
             sx={{
               maxWidth: isMobile ? "270px" : "330px",
+              cursor: "pointer",
               "&:hover .divider-hover": {
                 transition: "all 0.5s ease",
                 width: 0,
