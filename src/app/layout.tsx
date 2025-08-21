@@ -7,9 +7,9 @@ export const metadata: Metadata = {
   title: "Thomas Sampaio | Site",
   description:
     "",
-  // icons: {
-  //   icon: "/favicon.svg",
-  // },
+  icons: {
+    icon: "/favicon.svg",
+  },
   openGraph: {
     type: "website",
     url: "",
