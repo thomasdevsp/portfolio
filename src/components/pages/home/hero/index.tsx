@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <Stack
       sx={{
-        minHeight: "900px",
+        minHeight: "760px",
         padding: "2rem",
 
         flexDirection: isMobile ? "column" : "row",

@@ -10,6 +10,7 @@ export default function Projects() {
     <Stack
       sx={{
         width: "100%",
+        padding: isMobile ? "3rem 0" : "5rem 0",
 
         alignItems: "center",
         gap: "3rem",
@@ -19,6 +20,7 @@ export default function Projects() {
         sx={{
           color: "#fff",
           fontSize: isMobile ? "2rem" : "3rem",
+          textAlign: "center",
           "b": {
             color: "#CBACF9",
           },
@@ -37,7 +39,7 @@ export default function Projects() {
           alignItems: "center",
           justifyContent: "center",
           flexWrap: "wrap",
-          gap: "2rem",
+          gap: isMobile ? "1rem" : "2rem",
 
         }}
       >
@@ -50,9 +52,18 @@ export default function Projects() {
               width: "100%",
 
               gap: "2rem",
+              justifyContent: "space-between",
 
               background: "linear-gradient(#04071D, #0C0E23)",
+              border: "1px solid transparent",
               borderRadius: "1.5rem",
+              cursor: "pointer",
+              transition: "all 0.3s ease",
+              ":hover": {
+                transition: "all 0.5s ease",
+                scale: 1.01,
+                boxShadow: " 0 0 8px 1px rgba(255, 255, 255, 0.4);",
+              }
             }}
           >
             <Stack
@@ -60,7 +71,9 @@ export default function Projects() {
                 width: "100%",
                 minHeight: isMobile ? "220px" : "330px",
 
-                background: "#13162D",
+                background: project.image ? `url(${project.image})` : "#13162D",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
                 borderRadius: "0.9rem",
               }}
             />
@@ -77,13 +90,13 @@ export default function Projects() {
                   fontWeight: "bold",
                 }}
               >
-                {project.title} {index}
+                {project.title}
               </Typography>
 
               <Typography
                 sx={{
                   color: "#BEC1DD",
-                  fontSize: isMobile ? "1rem" : "1.25rem",
+                  fontSize: isMobile ? "0.9rem" : "1.125rem",
                 }}
               >
                 {project.description}
@@ -121,6 +134,8 @@ export default function Projects() {
 
               <Typography
                 component={"a"}
+                href={project.liveLink}
+                target="_blank"
                 sx={{
                   margin: isMobile ? "0 auto" : "",
 
@@ -130,6 +145,7 @@ export default function Projects() {
 
                   color: "#CBACF9",
                   cursor: "pointer",
+                  textDecoration: "none",
                   transition: "all 0.2s ease",
 
                   ":hover": {
