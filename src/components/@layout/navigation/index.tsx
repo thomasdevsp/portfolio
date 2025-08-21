@@ -85,10 +85,10 @@ const Navigation = () => {
 
               <Tab
                 key={index}
-                label={pathname != item.href && item.label}
+                label={item.label}
                 component={Link}
                 href={item.href}
-                icon={pathname === item.href && <item.icon color="currentColor" />}
+              // icon={pathname === item.href && <item.icon color="currentColor" />}
               />
             ))}
           </Tabs>
