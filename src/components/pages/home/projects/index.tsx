@@ -155,7 +155,7 @@ export default function Projects() {
                   }
                 }}
               >
-                Check Live Site <RxArrowTopRight />
+                Veja o site<RxArrowTopRight />
               </Typography>
             </Stack>
 
