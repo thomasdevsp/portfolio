@@ -14,6 +14,7 @@ export const Project: IProjectsProps[] = [
     icons: [
       "/assets/img/home/projects/icons/next-icon.svg",
       "/assets/img/home/projects/icons/ts-icon.svg",
+      "/assets/img/home/projects/icons/material-ui-icon.png",
     ],
     liveLink: "https://www.villadenatalsaopaulo.com.br/",
   },
@@ -24,6 +25,7 @@ export const Project: IProjectsProps[] = [
     icons: [
       "/assets/img/home/projects/icons/next-icon.svg",
       "/assets/img/home/projects/icons/ts-icon.svg",
+      "/assets/img/home/projects/icons/material-ui-icon.png",
     ],
     liveLink: "https://www.saopaulooktoberfest.com.br/",
   },
@@ -32,8 +34,9 @@ export const Project: IProjectsProps[] = [
     title: "Coffee Delivery",
     description: "Um case de estudo que simula uma plataforma de e-commerce para entrega de café. O projeto permite ao usuário selecionar a quantidade de cada café, adicionar os itens ao carrinho e simular a finalização de um pedido.",
     icons: [
-      "/assets/img/home/projects/icons/next-icon.svg",
+      "/assets/img/home/projects/icons/react-icon.svg",
       "/assets/img/home/projects/icons/ts-icon.svg",
+      "/assets/img/home/projects/icons/styled-components-icon.png",
     ],
     liveLink: "https://coffee-delivery-eta-ochre.vercel.app/",
   },
@@ -42,8 +45,9 @@ export const Project: IProjectsProps[] = [
     title: "Ignite Timer",
     description: "Este projeto é um aplicativo que implementa a técnica Pomodoro. A ferramenta permite que você defina um tempo e título para uma tarefa, inicie o temporizador e visualize um histórico de suas atividades concluídas.",
     icons: [
-      "/assets/img/home/projects/icons/next-icon.svg",
+      "/assets/img/home/projects/icons/react-icon.svg",
       "/assets/img/home/projects/icons/ts-icon.svg",
+      "/assets/img/home/projects/icons/styled-components-icon.png",
     ],
     liveLink: "https://ignite-timer-gamma-two.vercel.app/",
   },

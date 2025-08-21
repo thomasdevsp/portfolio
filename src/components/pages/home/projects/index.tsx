@@ -126,7 +126,8 @@ export default function Projects() {
                     src={item}
                     alt=""
                     style={{
-                      maxWidth: "2rem",
+                      maxWidth: "1.75rem",
+                      objectFit: "cover",
                     }}
                   />
                 ))}
