@@ -25,7 +25,7 @@ export default function Footer() {
       <Stack
         sx={{
           width: "100%",
-          padding: "1.25rem",
+          padding: isMobile ? "2rem 1.25rem" : "1.25rem",
 
           alignItems: "center",
 
@@ -166,8 +166,13 @@ export default function Footer() {
       >
         <Typography
           variant="body2"
+          sx={{
+            "b": {
+              color: "#CBACF9",
+            }
+          }}
         >
-          Developed and Design by Thomas Sampaio
+          Developed and Design by me(Thomas <b>Fernando</b>)
         </Typography>
       </Stack >
     </>
