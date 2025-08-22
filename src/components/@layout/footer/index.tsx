@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ContainerFooter } from "./styles";
-import { Box, Button, Container, Divider, Link, Stack, Typography } from "@mui/material";
+import { Divider, Stack, Typography } from "@mui/material";
 import { useBreakpoint } from "@/hooks/useBreakpoints";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
@@ -34,121 +33,119 @@ export default function Footer() {
       >
         <Stack
           sx={{
-            gap: "2rem",
+            gap: "1rem",
           }}
         >
           <Stack>
             <Typography
               sx={{
                 color: "#fff",
-                fontSize: isMobile ? "4.125rem" : "5.75rem",
+                fontSize: isMobile ? "3.125rem" : "4.75rem",
                 fontWeight: "bold",
                 "span": {
                   color: "#CBACF9",
                 }
               }}
             >
-              Posso <span>ajudar?</span>
-            </Typography>
-
-            <Typography
-              sx={{
-                color: "#fff",
-                "span": {
-                  color: "#CBACF9",
-                }
-              }}
-            >
-              Vamos conversar e <br />
-              desenvolver sua <span>ideia</span>
+              Vamos desenvolver <br />
+              sua <span>ideia</span>
             </Typography>
           </Stack>
 
           <Stack
-            onClick={handleCopyClick}
             sx={{
-              maxWidth: isMobile ? "270px" : copied ? "190px" : "330px",
-              cursor: "pointer",
-              "&:hover .divider-hover": {
-                transition: "all 0.5s ease",
-                width: 0,
-              },
-            }}
-          >
-            <Typography
-              sx={{
-                color: "#fff",
-                fontSize: isMobile ? "1.375rem" : "1.75rem",
-              }}
-            >
-              {copied ? "email copiado!" : "thomasdevsp@gmail.com"}
-            </Typography>
-            <Divider
-              className="divider-hover"
-              sx={{
-                width: "100%",
-                height: "3px",
-
-                background: "#fff",
-                borderRadius: "6px",
-                transition: "all 0.6s ease",
-
-              }}
-            />
-          </Stack>
-
-          <Stack
-            sx={{
-              flexDirection: "row",
-              gap: "1rem",
+              flexDirection: isMobile ? "column" : "row",
+              alignItems: isMobile ? "flex-start" : "center",
+              gap: "2rem",
+              justifyContent: "space-between",
             }}
           >
             <Stack
-              component={"a"}
-              href="https://github.com/thomasdevsp"
-              target="_blank"
+              onClick={handleCopyClick}
               sx={{
-                padding: "0.625rem",
-
-                background: "#A265FB",
-                borderRadius: "0.5rem",
-                color: "#fff",
-                transition: "all 0.2s ease",
-                ":hover": {
-                  transition: "all 0.2s ease",
-                  background: "#8034F2",
-                  scale: 1.1,
-                }
+                maxWidth: isMobile ? "270px" : copied ? "190px" : "330px",
+                cursor: "pointer",
+                "&:hover .divider-hover": {
+                  transition: "all 0.5s ease",
+                  width: 0,
+                },
               }}
             >
-              <FaGithub
-                size={24}
+              <Typography
+                sx={{
+                  color: "#fff",
+                  fontSize: isMobile ? "1.375rem" : "1.75rem",
+                }}
+              >
+                {copied ? "email copiado!" : "thomasdevsp@gmail.com"}
+              </Typography>
+              <Divider
+                className="divider-hover"
+                sx={{
+                  width: "100%",
+                  height: "3px",
+
+                  background: "#fff",
+                  borderRadius: "6px",
+                  transition: "all 0.6s ease",
+
+                }}
               />
             </Stack>
 
             <Stack
-              component={"a"}
-              href="https://www.linkedin.com/in/thomas-sampaio/"
-              target="_blank"
               sx={{
-                padding: "0.625rem",
-
-                background: "#A265FB",
-                borderRadius: "0.5rem",
-                color: "#fff",
-                transition: "all 0.2s ease",
-                ":hover": {
-                  transition: "all 0.2s ease",
-                  background: "#8034F2",
-                  scale: 1.1,
-                }
+                flexDirection: "row",
+                gap: "0.5rem",
               }}
             >
-              <FaLinkedin
-                size={24}
-              />
-            </Stack>
+              <Stack
+                component={"a"}
+                href="https://github.com/thomasdevsp"
+                target="_blank"
+                sx={{
+                  padding: "0.625rem",
 
+                  background: "#A265FB",
+                  borderRadius: "0.5rem",
+                  color: "#fff",
+                  transition: "all 0.2s ease",
+                  ":hover": {
+                    transition: "all 0.2s ease",
+                    background: "#8034F2",
+                    scale: 1.1,
+                  }
+                }}
+              >
+                <FaGithub
+                  size={24}
+                />
+              </Stack>
+
+              <Stack
+                component={"a"}
+                href="https://www.linkedin.com/in/thomas-sampaio/"
+                target="_blank"
+                sx={{
+                  padding: "0.625rem",
+
+                  background: "#A265FB",
+                  borderRadius: "0.5rem",
+                  color: "#fff",
+                  transition: "all 0.2s ease",
+                  ":hover": {
+                    transition: "all 0.2s ease",
+                    background: "#8034F2",
+                    scale: 1.1,
+                  }
+                }}
+              >
+                <FaLinkedin
+                  size={24}
+                />
+              </Stack>
+
+            </Stack>
           </Stack>
         </Stack>
       </Stack>

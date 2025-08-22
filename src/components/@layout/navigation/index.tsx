@@ -26,10 +26,11 @@ const NAV_ITEMS = [
   },
 ];
 
-const Navigation = () => {
+export default function Navigation() {
   const [tabIndex, setTabIndex] = useState(0);
-  const pathname = usePathname();
   const isMobile = useBreakpoint("md");
+  const pathname = usePathname();
+
 
   const handleChange = (event, newValue) => {
     setTabIndex(newValue);
@@ -43,60 +44,50 @@ const Navigation = () => {
   }, [pathname]);
 
   return (
-    <Box>
-      <ContainerHeader>
-        <ContainerNavigation>
+    <Stack
+      sx={{
+        padding: "2rem",
+        position: "absolute",
+        top: 0,
+        zIndex: 2,
+        width: "100%",
 
-          <Tabs
-            value={tabIndex}
-            onChange={handleChange}
-            centered
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "3rem",
+
+        background: "transparent",
+      }}
+    >
+      {NAV_ITEMS.map((item, index) => {
+        const selected = pathname === item.href
+
+        return (
+          <Typography
+            key={index}
+            component={"a"}
+            href={item.href}
             sx={{
-              minHeight: "5.5rem", // Redução da altura das abas
-              gap: "2rem",
-              background: "#000319",
+              color: selected ? "#CBACF9" : "#e7e7e7",
+              fontSize: selected ? "1.025rem" : "1rem",
+              fontWeight: selected ? 600 : 300,
+              opacity: selected ? 1 : 0.9,
+              textDecoration: "none",
+              transition: "all 0.2s ease",
 
-              "& .MuiTabs-indicator": {
-                backgroundColor: "unset",
-              },
-              "& .MuiTab-root": {
-                padding: "0.2rem 1rem",
-                minHeight: "5.5rem", // Garantindo que as abas não fiquem muito altas
-
-                display: "flex",
-                flexDirection: "row",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "0.5rem",
-
-                color: "white",
-                fontSize: "0.9rem",
-                fontWeight: "normal",
-                textTransform: "none",
-              },
-              width: "100%",
-              "& .MuiTab-root.Mui-selected": {
+              ":hover": {
                 color: "#CBACF9",
-                fontWeight: "bold",
+                opacity: 1,
+                transition: "all 0.2s ease",
               },
             }}
           >
-            {NAV_ITEMS.map((item, index) => (
-
-              <Tab
-                key={index}
-                label={item.label}
-                component={Link}
-                href={item.href}
-              // icon={pathname === item.href && <item.icon color="currentColor" />}
-              />
-            ))}
-          </Tabs>
-
-        </ContainerNavigation>
-      </ContainerHeader>
-    </Box>
+            {item.label}
+          </Typography>
+        )
+      })}
+    </Stack>
   );
 };
 
-export default Navigation;

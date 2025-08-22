@@ -63,6 +63,9 @@ export default function AboutMe() {
           }
           alt=""
           style={{
+            maxWidth: "400px",
+            width: "100%",
+
             borderRadius: "1rem",
             objectFit: "cover",
           }}
@@ -98,7 +101,7 @@ export default function AboutMe() {
           >
             Minha paixão por tecnologia começou na infância com jogos, mas foi na pré-adolescência,
             após montar meu primeiro computador e ser influenciado fortemente pelo meu irmão
-            <a href="https://www.vitorsampaio.com.br/" target="_blank"> @vitor</a>, que me
+            <a href="https://www.vitorsampaio.com.br/" target="_blank"> @vitor</a> que me
             aventurei na lógica de programação. Essa curiosidade me levou a cursar o ensino médio
             técnico no UNASP, onde aprofundei meus conhecimentos em desenvolvimento web. Durante
             essa jornada, também busquei cursos por conta própria para expandir minhas habilidades,

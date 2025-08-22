@@ -46,6 +46,8 @@ export default function Projects() {
         {Project.map((project, index) => (
           <Stack
             key={index}
+            component={"div"}
+            onClick={() => window.open(project.liveLink, "_blank")}
             sx={{
               padding: isMobile ? "1.5rem 1.25rem" : "2rem 1.5rem",
               maxWidth: "560px",
@@ -56,13 +58,13 @@ export default function Projects() {
 
               background: "linear-gradient(#04071D, #0C0E23)",
               border: "1px solid transparent",
-              borderRadius: "1.5rem",
+              borderRadius: "0.75rem",
               cursor: "pointer",
               transition: "all 0.3s ease",
               ":hover": {
                 transition: "all 0.5s ease",
                 scale: 1.01,
-                boxShadow: " 0 0 8px 1px rgba(255, 255, 255, 0.4);",
+                boxShadow: isMobile ? "" : " 0 0 4px 0.5px rgba(203, 172, 249, 0.4);",
               }
             }}
           >
@@ -109,7 +111,6 @@ export default function Projects() {
 
                 flexDirection: isMobile ? "column" : "row",
                 alignItems: isMobile ? "flex-start" : "center",
-                justifyContent: "space-between",
                 gap: "2rem",
               }}
             >
@@ -132,31 +133,6 @@ export default function Projects() {
                   />
                 ))}
               </Stack>
-
-              <Typography
-                component={"a"}
-                href={project.liveLink}
-                target="_blank"
-                sx={{
-                  margin: isMobile ? "0 auto" : "",
-
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "0.5rem",
-
-                  color: "#CBACF9",
-                  cursor: "pointer",
-                  textDecoration: "none",
-                  transition: "all 0.2s ease",
-
-                  ":hover": {
-                    transition: "all 0.2s ease",
-                    color: "#b88bfc",
-                  }
-                }}
-              >
-                Veja o site<RxArrowTopRight />
-              </Typography>
             </Stack>
 
           </Stack>
