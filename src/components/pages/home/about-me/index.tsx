@@ -81,7 +81,7 @@ export default function AboutMe() {
           }}
         >
           <Typography>
-            <b>Desenvolvedor Front-end | Next.js | TypeScript | Material UI</b>
+            <b>Desenvolvedor Front-end {isMobile ? <br /> : "|"} Next.js | TypeScript | Material UI</b>
             <br /><br />
             Atualmente, sou responsável pelo desenvolvimento e manutenção de websites na Summus
             Marketing, com foco em plataformas para grandes eventos como o São Paulo Oktoberfest,
