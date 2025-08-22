@@ -1,12 +1,10 @@
 import { useBreakpoint } from "@/hooks/useBreakpoints";
-import { Box, Stack, Tab, Tabs, Typography } from "@mui/material";
-import Link from "next/link";
+import { Stack, Typography } from "@mui/material";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { GoHome } from "react-icons/go";
 import { FaBook } from "react-icons/fa";
 import { RxPerson } from "react-icons/rx";
-import { ContainerHeader, ContainerNavigation } from "./styles";
 
 const NAV_ITEMS = [
   {
