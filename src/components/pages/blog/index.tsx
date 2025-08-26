@@ -71,7 +71,7 @@ export default function Blog({ onClose }: { onClose: () => void }) {
         <br />
 
         Antes de realizar esse sonho, ganhei um notebook que se tornou meu fiel companheiro. Durante
-        esse período, rapidamente me tornei o &qout;técnico de TI júnior&qout; da casa, pois qualquer problema
+        esse período, rapidamente me tornei o &quot;técnico de TI júnior&quot; da casa, pois qualquer problema
         com o notebook era resolvido por mim. Para realizar meu sonho de montar um computador gamer,
         acabei vendendo o notebook para o meu pai. Em um acordo, troquei o notebook pelo computador
         dele e com o dinheiro que tinha guardado, fiz um upgrade. Esse foi o meu primeiro computador
