@@ -40,7 +40,7 @@ export default async function RootLayout({
       <ApplicationWrapper>
         {children}
       </ApplicationWrapper>
-      <GoogleTagManager gtmId={gtmID} />
+      <GoogleAnalytics gaId={gtmID} />
     </html>
   );
 }
