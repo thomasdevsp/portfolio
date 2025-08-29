@@ -32,13 +32,15 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gtmID = process.env.NEXT_PUBLIC_GTM_ID;
+
 
   return (
     <html lang="pt-BR">
       <ApplicationWrapper>
         {children}
       </ApplicationWrapper>
-      <GoogleTagManager gtmId={""} />
+      <GoogleTagManager gtmId={gtmID} />
     </html>
   );
 }
