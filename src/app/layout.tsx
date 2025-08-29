@@ -1,7 +1,6 @@
 import { ApplicationWrapper } from "@/wrapper";
-import Layout from "@/components/@layout";
 import { Metadata } from "next";
-import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "Thomas Sampaio | Site",
@@ -27,12 +26,14 @@ export const metadata: Metadata = {
   },
 };
 
+const gaID = process.env.NEXT_PUBLIC_GA_ID;
+
+
 export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const gtmID = process.env.NEXT_PUBLIC_GTM_ID;
 
 
   return (
@@ -40,7 +41,7 @@ export default async function RootLayout({
       <ApplicationWrapper>
         {children}
       </ApplicationWrapper>
-      <GoogleAnalytics gaId={gtmID} />
+      <GoogleAnalytics gaId={gaID} />
     </html>
   );
 }
