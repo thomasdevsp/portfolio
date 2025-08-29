@@ -1,7 +1,7 @@
 import { ApplicationWrapper } from "@/wrapper";
 import Layout from "@/components/@layout";
 import { Metadata } from "next";
-import { GoogleTagManager } from "@next/third-parties/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "Thomas Sampaio | Site",
@@ -40,7 +40,7 @@ export default async function RootLayout({
       <ApplicationWrapper>
         {children}
       </ApplicationWrapper>
-      <GoogleTagManager gtmId={`${gtmID}`} />
+      <GoogleTagManager gtmId={gtmID} />
     </html>
   );
 }
