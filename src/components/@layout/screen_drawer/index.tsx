@@ -1,6 +1,7 @@
+"use client"
+
 import React, { useEffect, useState } from "react";
-import { Drawer, Typography, Box, IconButton } from "@mui/material";
-import { Close } from "@material-ui/icons";
+import { Drawer } from "@mui/material";
 import { useRouter, useSearchParams } from "next/navigation";
 import { data_drawer } from "@/components/@data/drawer";
 import { sendGTMEvent } from "@next/third-parties/google";

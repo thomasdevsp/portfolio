@@ -1,7 +1,6 @@
 import { useBreakpoint } from "@/hooks/useBreakpoints";
 import { Stack, Typography } from "@mui/material";
 import { Project } from "./data";
-import { RxArrowTopRight } from "react-icons/rx";
 
 export default function Projects() {
   const isMobile = useBreakpoint("md")
