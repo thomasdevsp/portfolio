@@ -1,6 +1,6 @@
 import { ApplicationWrapper } from "@/wrapper";
 import { Metadata } from "next";
-import { GoogleTagManager } from "@next/third-parties/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "Thomas Sampaio | Site",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
 };
 
-const gtmID = process.env.NEXT_PUBLIC_GTM_ID;
+const gaID = process.env.NEXT_PUBLIC_GA_ID;
 
 
 export default async function RootLayout({
@@ -40,7 +40,7 @@ export default async function RootLayout({
       <ApplicationWrapper>
         {children}
       </ApplicationWrapper>
-      <GoogleTagManager gtmId={gtmID} />
+      <GoogleAnalytics gaId={gaID} />
     </html>
   );
 }
