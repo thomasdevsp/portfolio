@@ -1,6 +1,6 @@
 import { useBreakpoint } from "@/hooks/useBreakpoints";
 import { Stack, Typography } from "@mui/material";
-import { GoX, GoXCircle } from "react-icons/go";
+import { GoX } from "react-icons/go";
 
 export default function Blog({ onClose }: { onClose: () => void }) {
   const isMobile = useBreakpoint("md")
@@ -14,6 +14,7 @@ export default function Blog({ onClose }: { onClose: () => void }) {
         width: "100%",
 
         alignItems: "center",
+        gap: "4rem",
 
         background: "#000319",
         color: "#fff"
@@ -23,9 +24,13 @@ export default function Blog({ onClose }: { onClose: () => void }) {
         component={"div"}
         onClick={onClose}
         sx={{
-          position: "absolute",
-          top: 40,
-          left: 40,
+          position: "fixed",
+          top: isMobile ? 20 : 40,
+          left: isMobile ? 20 : 40,
+          padding: isMobile ? "12px" : "",
+          borderRadius: "100%",
+
+          background: isMobile ? "#000319" : "",
 
           cursor: "pointer",
           transition: "all 0.3s ease-in",
@@ -40,6 +45,45 @@ export default function Blog({ onClose }: { onClose: () => void }) {
         />
       </Stack>
 
+      <Stack
+        sx={{
+          alignItems: "center",
+          gap: "1rem",
+
+          textAlign: "center",
+        }}
+      >
+        <Typography
+          sx={{
+            color: "#E5E2E2",
+            fontWeight: "bold",
+          }}
+        >
+          26 de agosto de 2025
+        </Typography>
+
+        <Stack>
+          <Typography
+            sx={{
+              fontSize: isMobile ? "2rem" : "2.75rem",
+              fontWeight: "bold",
+            }}
+          >
+            Minha Jornada com a Tecnologia:
+            <br />
+            Da Curiosidade à Carreira
+          </Typography>
+
+          <Typography
+            sx={{
+              color: "#E5E2E2",
+            }}
+          >
+            Descrevo como vejo o inicio da minhas paixões e consequentemente minha carreira
+          </Typography>
+        </Stack>
+      </Stack>
+
 
       <Stack
         sx={{
@@ -49,11 +93,11 @@ export default function Blog({ onClose }: { onClose: () => void }) {
       >
         <Typography
           sx={{
-            fontSize: "2rem",
+            fontSize: isMobile ? "1.75rem" : "2rem",
             fontWeight: "bold",
           }}
         >
-          Minha Jornada com a Tecnologia: Da Curiosidade à Carreira
+          Primeiros passos
         </Typography>
         <br />
 
@@ -90,7 +134,7 @@ export default function Blog({ onClose }: { onClose: () => void }) {
 
         <Typography
           sx={{
-            fontSize: "2rem",
+            fontSize: isMobile ? "1.75rem" : "2rem",
             fontWeight: "bold",
           }}
         >
@@ -116,7 +160,7 @@ export default function Blog({ onClose }: { onClose: () => void }) {
 
         <Typography
           sx={{
-            fontSize: "2rem",
+            fontSize: isMobile ? "1.75rem" : "2rem",
             fontWeight: "bold",
           }}
         >

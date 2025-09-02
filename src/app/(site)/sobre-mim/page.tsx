@@ -6,10 +6,16 @@ import { empresas } from "./data"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 import { SiGoogledocs } from "react-icons/si";
 import useQueryParams from "@/hooks/useQueryParams"
+import { sendGAEvent } from "@next/third-parties/google"
 
 export default function SobreMim() {
   const isMobile = useBreakpoint("md")
   const { setParam } = useQueryParams()
+
+  const handleHistoryButton = () => {
+    setParam("modal", "da-curiosidade-a-carreira")
+    sendGAEvent("event", "buttonClicked", { value: "botão da historia" })
+  }
 
   return (
     <Stack
@@ -329,7 +335,7 @@ export default function SobreMim() {
             <br />
             <br />
             <a
-              onClick={() => setParam("modal", "da-curiosidade-a-carreira")}
+              onClick={() => handleHistoryButton()}
             >
               Ler história completa
             </a>
