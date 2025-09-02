@@ -7,10 +7,15 @@ import { FaGithub, FaLinkedin } from "react-icons/fa"
 import { SiGoogledocs } from "react-icons/si";
 import useQueryParams from "@/hooks/useQueryParams"
 import { sendGAEvent } from "@next/third-parties/google"
+import { useEffect } from "react"
 
 export default function SobreMim() {
   const isMobile = useBreakpoint("md")
   const { setParam } = useQueryParams()
+
+  useEffect(() => {
+    sendGAEvent("event", "Sobre Mim")
+  }, [])
 
   const handleHistoryButton = () => {
     setParam("modal", "da-curiosidade-a-carreira")

@@ -4,10 +4,16 @@ import { useBreakpoint } from "@/hooks/useBreakpoints"
 import { Stack, Typography } from "@mui/material"
 import { blog } from "./data"
 import useQueryParams from "@/hooks/useQueryParams"
+import { useEffect } from "react"
+import { sendGAEvent } from "@next/third-parties/google"
 
 export default function Blog() {
   const isMobile = useBreakpoint("md")
   const { setParam } = useQueryParams()
+
+  useEffect(() => {
+    sendGAEvent("event", "Blog")
+  }, [])
 
   return (
     <Stack
