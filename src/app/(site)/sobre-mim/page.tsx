@@ -19,7 +19,10 @@ export default function SobreMim() {
 
   const handleHistoryButton = () => {
     setParam("modal", "da-curiosidade-a-carreira")
-    sendGAEvent("event", "buttonClicked", { value: "botão da historia" })
+    sendGAEvent("event", "buttonClicked", {
+      value: "botão da historia",
+      date: new Date().toISOString(),
+    })
   }
 
   return (
