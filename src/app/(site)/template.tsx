@@ -2,7 +2,6 @@
 
 import Footer from "@/components/@layout/footer";
 import Navigation from "@/components/@layout/navigation";
-import ScreenDrawer from "@/components/@layout/screen_drawer";
 import { Box } from "@mui/material";
 import { ReactNode } from "react";
 
