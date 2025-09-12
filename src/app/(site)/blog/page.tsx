@@ -1,121 +1,71 @@
-"use client"
 
-import { useBreakpoint } from "@/hooks/useBreakpoints"
-import { Stack, Typography } from "@mui/material"
-import { blog } from "./data"
-import useQueryParams from "@/hooks/useQueryParams"
-import { useEffect } from "react"
-import { sendGAEvent } from "@next/third-parties/google"
+import { Stack } from "@mui/material"
+import TrackerGa from "@/lib/googleAnalytics/trackerComponent"
+import BlogCard from "@/components/pages/blog/components/blogCard"
+import { generateNotionPageSlug, getDatabaseItems, parseDateDisplay, richTextRender } from "@/lib/notion"
+import { PostProps } from "@/types/notion.type"
 
-export default function Blog() {
-  const isMobile = useBreakpoint("md")
-  const { setParam } = useQueryParams()
+export default async function Blog() {
 
-  useEffect(() => {
-    sendGAEvent("event", "Blog")
-  }, [])
+  const { results } = await getDatabaseItems<PostProps>({
+    sorts: [
+      { property: "Publicado Em", direction: "descending" },
+    ],
+    where: {
+      and: [
+        { property: "Publicado Em", type: "date", op: "is_not_empty" },
+      ],
+    },
+  })
 
   return (
-    <Stack
-      sx={{
-        width: "100%",
-        height: "100dvh",
-
-        alignItems: "center",
-        justifyContent: "center",
-        gap: "2rem",
-
-      }}
-    >
-
+    <>
       <Stack
         sx={{
-          gap: "1.5rem",
+          width: "100%",
+          height: "100dvh",
+
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "2rem",
+
         }}
       >
-        {blog.map((blog, index) => (
-          <Stack
-            component={"div"}
-            key={index}
-            onClick={() => setParam("modal", blog.link)}
-            sx={{
-              padding: "1rem",
-              maxWidth: isMobile ? "340px" : "600px",
 
-              gap: "0.875rem",
+        <Stack
+          sx={{
+            gap: "1.5rem",
+          }}
+        >
+          {results.map((item, index) => {
+            const title = richTextRender(item.properties.Nome.title)
+            const description = richTextRender(item.properties.Descricao.rich_text)
+            const tags = item.properties.Tags.multi_select
+            const publishedIn = item.properties["Publicado Em"].date?.start as string
 
-              background: "#13162D",
-              borderRadius: "0.625rem",
-              cursor: "pointer"
-            }}
-          >
-            <Stack
-              sx={{
-                width: "100%",
+            const slug = generateNotionPageSlug(item.url)
+            const dateDisplay = parseDateDisplay(publishedIn)
 
-                flexDirection: "row",
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
-            >
-              <Typography
-                sx={{
-                  color: "#E5E2E2",
-                  fontSize: isMobile ? "0.75rem" : "0.875rem",
-                  fontWeight: "bold",
-                  opacity: 0.6,
-                }}
-              >
-                {blog.date}
-              </Typography>
-
-              {blog.tags.map((tag, index) => (
-                <Typography
-                  key={index}
-                  sx={{
-                    padding: "0.25rem 0.5rem",
-
-                    background: "#202448",
-                    borderRadius: "1rem",
-                    color: "#fff",
-                    fontSize: isMobile ? "0.75rem" : "0.875rem",
-                    fontWeight: "bold",
-
-                  }}
-                >
-                  {tag}
-                </Typography>
-              ))}
-            </Stack>
-
-            <Stack
-              sx={{
-                gap: "0.5rem"
-              }}
-            >
-              <Typography
-                sx={{
-                  color: "#CBACF9",
-                  fontSize: isMobile ? "1rem" : "1.25rem",
-                  fontWeight: "bold",
-                }}
-              >
-                {blog.title}
-              </Typography>
-
-              <Typography
-                sx={{
-                  color: "#E5E2E2",
-                  fontSize: isMobile ? "0.625rem" : "0.875rem",
-                  fontWeight: "bold",
-                }}
-              >
-                {blog.description}
-              </Typography>
-            </Stack>
-          </Stack>
-        ))}
+            return (
+              <BlogCard
+                key={index}
+                title={title}
+                dateDisplay={dateDisplay}
+                description={description}
+                slug={slug}
+                tags={tags}
+              />
+            )
+          })}
+        </Stack>
       </Stack>
-    </Stack>
+
+      <TrackerGa
+        eventName="Blog - Page"
+        params={{
+          page: "Blog"
+        }}
+      />
+    </>
   )
 }

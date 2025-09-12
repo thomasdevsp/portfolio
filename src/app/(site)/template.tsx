@@ -22,7 +22,6 @@ export default function Template({ children }: TemplateProps) {
         {children}
       </Box>
       <Footer />
-      <ScreenDrawer />
     </body>
   );
 }

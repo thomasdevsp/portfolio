@@ -37,10 +37,12 @@ export default async function RootLayout({
 
   return (
     <html lang="pt-BR">
-      <ApplicationWrapper>
-        {children}
-      </ApplicationWrapper>
-      <GoogleAnalytics gaId={gaID} />
+      <body>
+        <ApplicationWrapper>
+          {children}
+        </ApplicationWrapper>
+        <GoogleAnalytics gaId={gaID} />
+      </body>
     </html>
   );
 }
