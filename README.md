@@ -1,5 +1,7 @@
 # 🚀 Thomas Sampaio - Site
 
+🔗 **Acesse o site aqui:** [thomassampaio.com.br](https://www.thomassampaio.com.br/)
+
 Um projeto de portfólio moderno e responsivo, construído com **Next.js** e integrado com a **Notion API** para gerenciamento de conteúdo dinâmico.
 
 ## 🛠️ Tecnologias Utilizadas
@@ -30,6 +32,8 @@ Certifique-se de ter instalado:
 git clone https://www.youtube.com/watch?v=GRf6so_sois
 cd [Nome da Pasta do Projeto]
 ```
+
+*(**Atenção:** Certifique-se de substituir a URL acima pelo link do seu repositório Git.)*
 
 ### 3\. Instale as Dependências
 
@@ -64,3 +68,11 @@ yarn dev
 ```
 
 Abra [http://localhost:3000](https://www.google.com/search?q=http://localhost:3000) no seu navegador para ver o resultado. As mudanças no código serão automaticamente atualizadas.
+
+-----
+
+## 🌐 Deploy
+
+Este projeto está implantado na **Vercel** e pode ser acessado em:
+
+➡️ **[https://www.thomassampaio.com.br/](https://www.thomassampaio.com.br/)**
