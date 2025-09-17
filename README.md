@@ -1,9 +1,3 @@
-Que ótima iniciativa\! Um README bem feito é essencial para o seu portfólio. Ele não só explica o projeto, mas também demonstra suas habilidades de documentação.
-
-Aqui está uma sugestão de README formatado em Markdown, pronto para ser usado no seu repositório.
-
------
-
 # 🚀 Thomas Sampaio - Site
 
 Um projeto de portfólio moderno e responsivo, construído com **Next.js** e integrado com a **Notion API** para gerenciamento de conteúdo dinâmico.
