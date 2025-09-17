@@ -12,6 +12,7 @@ Um projeto de portfólio moderno e responsivo, construído com **Next.js** e int
 | **TypeScript** | Linguagem que adiciona tipagem estática ao JavaScript. |
 | **MUI Material** | Biblioteca popular de componentes React baseada no Material Design. |
 | **Notion API** | Utilizada para buscar e renderizar dados do banco de dados (por exemplo, posts de blog, projetos, etc.). |
+| **Google Analytics** | Usado para captar e analisar dados sobre trafego da pagina. |
 
 -----
 
