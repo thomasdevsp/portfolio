@@ -83,7 +83,8 @@ export default function AboutMe() {
           <Typography>
             <b>Desenvolvedor Front-end {isMobile ? <br /> : "|"} Next.js | TypeScript | Material UI</b>
             <br /><br />
-            Atualmente, sou responsável pelo desenvolvimento e manutenção de websites na Summus
+            Atualmente estou mais focado em projetos pessoais, mas em minha mais recente experiência,
+            fui responsável pelo desenvolvimento e manutenção de websites na Summus
             Marketing, com foco em plataformas para grandes eventos como o São Paulo Oktoberfest,
             Villa de Natal SP, Expoflora e Natal de Holambra. Minha atuação é centrada na criação de
             novas funcionalidades e na otimização das plataformas, garantindo que os sites estejam

@@ -5,9 +5,6 @@ import { Box, Button, Divider, Stack, Typography } from "@mui/material"
 import { empresas } from "./data"
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 import { SiGoogledocs } from "react-icons/si";
-import useQueryParams from "@/hooks/useQueryParams"
-import { sendGAEvent } from "@next/third-parties/google"
-import { useEffect } from "react"
 import sendEnrichedGAEvent from "@/lib/googleAnalytics/tracker"
 import TrackerGa from "@/lib/googleAnalytics/trackerComponent"
 
@@ -102,9 +99,9 @@ export default function SobreMim() {
                 fontSize: isMobile ? "0.9rem" : "1rem",
               }}
             >
-              Gostaria de contextualizar um pouco sobre minha pessoa, estou na corrida da casa dos 20 anos
-              para descobrir novos amores, gostos e paixões. Atualmente tenho olhado para a jardinagem,
-              tecnologia, games e meu desenvolvimento pessoal.
+              Gostaria de dar uma previa sobre minha pessoa, atualmente tenho 20 anos e gosto de pensar
+              que estou em uma grande jornada para descobrir oque eu realmente gosto. Tenho
+              olhado para a jardinagem, tecnologia, games e meu desenvolvimento pessoal.
               <br />
               <br />
               Hoje em dia tudo que eu faço está ligado com algum dos itens a cima, gosto muito dessas
