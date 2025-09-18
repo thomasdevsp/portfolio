@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       "",
     images: [
       {
-        url: "",
+        url: "/share-image.png",
         width: 1200,
         height: 628,
         alt: "Thomas Sampaio | Site",
